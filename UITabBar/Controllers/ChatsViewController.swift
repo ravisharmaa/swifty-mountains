@@ -5,6 +5,8 @@ class ChatsViewController: UIViewController {
     
     var tableView: UITableView = UITableView()
     
+    var names: [String] = ["John", "Ron","Mon"]
+    
     override func viewDidLoad() {
         
         super.viewDidLoad()
@@ -24,17 +26,27 @@ class ChatsViewController: UIViewController {
         tableView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
         tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
         
+        tableView.register(ChatsTableViewCell.self, forCellReuseIdentifier: "chatsCell")
+        
     }
 }
 
 
 extension ChatsViewController: UITableViewDelegate, UITableViewDataSource {
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        1
+        names.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell(style: .subtitle, reuseIdentifier: "reuseId")
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "chatsCell", for: indexPath) as! ChatsTableViewCell
+        
+        cell.textLabel?.text = names[indexPath.row]
+        
+        return cell
+        
+       
     }
     
     

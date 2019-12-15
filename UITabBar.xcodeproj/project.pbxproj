@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		2200C9F723A63E4900FC4ED4 /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2200C9F623A63E4900FC4ED4 /* DashboardViewController.swift */; };
 		2200C9F923A6471A00FC4ED4 /* ContactsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2200C9F823A6471A00FC4ED4 /* ContactsViewController.swift */; };
+		2200C9FC23A6523C00FC4ED4 /* ChatsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2200C9FB23A6523C00FC4ED4 /* ChatsTableViewCell.swift */; };
 		224895D923A1647A008F76C7 /* ChatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224895D823A1647A008F76C7 /* ChatsViewController.swift */; };
 		227DD487239D48A800B50D49 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 227DD486239D48A800B50D49 /* AppDelegate.swift */; };
 		227DD489239D48A800B50D49 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 227DD488239D48A800B50D49 /* SceneDelegate.swift */; };
@@ -19,6 +20,7 @@
 /* Begin PBXFileReference section */
 		2200C9F623A63E4900FC4ED4 /* DashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
 		2200C9F823A6471A00FC4ED4 /* ContactsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsViewController.swift; sourceTree = "<group>"; };
+		2200C9FB23A6523C00FC4ED4 /* ChatsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatsTableViewCell.swift; sourceTree = "<group>"; };
 		224895D823A1647A008F76C7 /* ChatsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatsViewController.swift; sourceTree = "<group>"; };
 		227DD483239D48A800B50D49 /* UITabBar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UITabBar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		227DD486239D48A800B50D49 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -39,6 +41,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2200C9FA23A651FE00FC4ED4 /* CellViews */ = {
+			isa = PBXGroup;
+			children = (
+				2200C9FB23A6523C00FC4ED4 /* ChatsTableViewCell.swift */,
+			);
+			path = CellViews;
+			sourceTree = "<group>";
+		};
 		227DD47A239D48A800B50D49 = {
 			isa = PBXGroup;
 			children = (
@@ -58,6 +68,7 @@
 		227DD485239D48A800B50D49 /* UITabBar */ = {
 			isa = PBXGroup;
 			children = (
+				2200C9FA23A651FE00FC4ED4 /* CellViews */,
 				22D35A21239D655F00814811 /* Controllers */,
 				227DD486239D48A800B50D49 /* AppDelegate.swift */,
 				227DD488239D48A800B50D49 /* SceneDelegate.swift */,
@@ -149,6 +160,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				227DD487239D48A800B50D49 /* AppDelegate.swift in Sources */,
+				2200C9FC23A6523C00FC4ED4 /* ChatsTableViewCell.swift in Sources */,
 				224895D923A1647A008F76C7 /* ChatsViewController.swift in Sources */,
 				227DD489239D48A800B50D49 /* SceneDelegate.swift in Sources */,
 				2200C9F723A63E4900FC4ED4 /* DashboardViewController.swift in Sources */,

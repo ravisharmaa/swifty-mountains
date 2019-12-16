@@ -24,6 +24,8 @@ class ChatsTableViewCell: UITableViewCell {
         
         setUpProfileImageView()
         
+        setUpImageLabel()
+        
     }
     
     required init?(coder: NSCoder) {
@@ -39,6 +41,13 @@ class ChatsTableViewCell: UITableViewCell {
         profileImageView.leftAnchor.constraint(equalTo: self.contentView.leftAnchor, constant: 12).isActive = true
         profileImageView.heightAnchor.constraint(equalToConstant: 80).isActive = true
         profileImageView.widthAnchor.constraint(equalTo: profileImageView.heightAnchor).isActive = true
+    }
+    
+    func setUpImageLabel() -> Void {
+        imageLabel.translatesAutoresizingMaskIntoConstraints = false
+        
+        imageLabel.topAnchor.constraint(equalTo: self.contentView.topAnchor, constant: 10).isActive = true
+        imageLabel.leadingAnchor.constraint(equalTo: self.profileImageView.trailingAnchor, constant: 20).isActive = true
     }
     
 }

@@ -9,6 +9,7 @@ class DashboardViewController: UITabBarController {
     let chatsViewController: UIViewController = {
        
         let chatsView = UINavigationController(rootViewController: ChatsViewController())
+        chatsView.navigationBar.prefersLargeTitles = true
         return chatsView
     
     }()
@@ -17,6 +18,7 @@ class DashboardViewController: UITabBarController {
     let contactsViewController: UIViewController = {
         
         let contactsView = UINavigationController(rootViewController: ContactsViewController())
+        contactsView.navigationBar.prefersLargeTitles = true
         return contactsView
     
     }()

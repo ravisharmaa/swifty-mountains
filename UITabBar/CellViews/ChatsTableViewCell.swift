@@ -19,7 +19,11 @@ class ChatsTableViewCell: UITableViewCell {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
         addSubview(profileImageView)
+        
         addSubview(imageLabel)
+        
+        setUpProfileImageView()
+        
     }
     
     required init?(coder: NSCoder) {
@@ -31,8 +35,10 @@ class ChatsTableViewCell: UITableViewCell {
     
     func setUpProfileImageView() -> Void {
         profileImageView.translatesAutoresizingMaskIntoConstraints = false
-        profileImageView.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
-        profileImageView.leadingAnchor.constraint(equalToSystemSpacingAfter: <#T##NSLayoutXAxisAnchor#>, multiplier: <#T##CGFloat#>)
+        profileImageView.topAnchor.constraint(equalTo:self.contentView.topAnchor, constant: 10).isActive = true
+        profileImageView.leftAnchor.constraint(equalTo: self.contentView.leftAnchor, constant: 12).isActive = true
+        profileImageView.heightAnchor.constraint(equalToConstant: 80).isActive = true
+        profileImageView.widthAnchor.constraint(equalTo: profileImageView.heightAnchor).isActive = true
     }
     
 }

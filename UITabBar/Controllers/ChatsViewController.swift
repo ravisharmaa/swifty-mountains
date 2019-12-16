@@ -42,11 +42,16 @@ extension ChatsViewController: UITableViewDelegate, UITableViewDataSource {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "chatsCell", for: indexPath) as! ChatsTableViewCell
         
-        cell.textLabel?.text = names[indexPath.row]
+        cell.imageLabel.text = names[indexPath.row]
+        cell.profileImageView.image = UIImage(named: "logo")
         
         return cell
         
        
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 100
     }
     
     

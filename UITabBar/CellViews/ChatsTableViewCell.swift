@@ -4,16 +4,23 @@ class ChatsTableViewCell: UITableViewCell {
 
     //MARK:- Defining views
     
-    let profileImageView: UIImageView = {
+    var profileImageView: UIImageView = {
         let image = UIImageView()
         return image
     }()
     
-    let imageLabel: UILabel = {
+    var imageLabel: UILabel = {
         let text = UILabel()
         
         return text
     }()
+    
+    var informationLabel: UILabel = {
+        let informationLabel = UILabel()
+        
+        return informationLabel
+    }()
+    
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -22,9 +29,13 @@ class ChatsTableViewCell: UITableViewCell {
         
         addSubview(imageLabel)
         
+        addSubview(informationLabel)
+        
         setUpProfileImageView()
         
         setUpImageLabel()
+        
+        setUpInformationLabel()
         
     }
     
@@ -44,10 +55,23 @@ class ChatsTableViewCell: UITableViewCell {
     }
     
     func setUpImageLabel() -> Void {
+        
         imageLabel.translatesAutoresizingMaskIntoConstraints = false
         
         imageLabel.topAnchor.constraint(equalTo: self.contentView.topAnchor, constant: 10).isActive = true
         imageLabel.leadingAnchor.constraint(equalTo: self.profileImageView.trailingAnchor, constant: 20).isActive = true
+    }
+    
+    func setUpInformationLabel() -> Void {
+        informationLabel.translatesAutoresizingMaskIntoConstraints = false
+        //informationLabel.topAnchor.constraint(equalTo: imageLabel.topAnchor, constant: 40).isActive = true
+        //informationLabel.leadingAnchor.constraint(equalTo: imageLabel.leadingAnchor).isActive = true
+        
+        // this method is painful works the same way though
+        NSLayoutConstraint.activate([
+            NSLayoutConstraint.init(item: informationLabel, attribute: .top, relatedBy: .equal, toItem: imageLabel, attribute: .top, multiplier: 1.0, constant: 40.00),
+            NSLayoutConstraint.init(item: informationLabel, attribute: .leading, relatedBy: .equal, toItem: imageLabel, attribute: .leading, multiplier: 1.0, constant: 1.0)
+        ])
     }
     
 }

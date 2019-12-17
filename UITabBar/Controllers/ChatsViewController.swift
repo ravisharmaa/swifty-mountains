@@ -7,6 +7,8 @@ class ChatsViewController: UIViewController {
     
     var names: [String] = ["John", "Ron","Mon"]
     
+    var details: [String] = ["Devloper", "Designer", "Manager"]
+    
     override func viewDidLoad() {
         
         super.viewDidLoad()
@@ -44,6 +46,7 @@ extension ChatsViewController: UITableViewDelegate, UITableViewDataSource {
         
         cell.imageLabel.text = names[indexPath.row]
         cell.profileImageView.image = UIImage(named: "logo")
+        cell.informationLabel.text = details[indexPath.row]
         
         return cell
         

@@ -22,6 +22,7 @@ class ChatsTableViewCell: UITableViewCell {
         return informationLabel
     }()
     
+    //MARK:- Overrides
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -42,6 +43,7 @@ class ChatsTableViewCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
+    //MARK:- Setting Constraints
     
     // setting up views
     

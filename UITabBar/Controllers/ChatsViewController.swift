@@ -5,9 +5,9 @@ class ChatsViewController: UIViewController {
     
     var tableView: UITableView = UITableView()
     
-    var names: [String] = ["John", "Ron","Mon"]
+    var names: [String] = ["John", "Ron","Mon","Son","Don","Von"]
     
-    var details: [String] = ["Devloper", "Designer", "Manager"]
+    var details: [String] = ["Devloper", "Designer", "Manager","Employee","Some","Man"]
     
     override func viewDidLoad() {
         
@@ -45,7 +45,17 @@ extension ChatsViewController: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "chatsCell", for: indexPath) as! ChatsTableViewCell
         
         cell.imageLabel.text = names[indexPath.row]
-        cell.profileImageView.image = UIImage(named: "logo")
+        
+        if indexPath.row == 0 {
+            cell.profileImageView.image = UIImage(named: "logo")
+        }
+        
+        if indexPath.row == 1 {
+            cell.profileImageView.image = UIImage(named: "harry_potter")
+        } else {
+            cell.profileImageView.image = UIImage(named: "logo")
+        }
+        
         cell.informationLabel.text = details[indexPath.row]
         
         return cell

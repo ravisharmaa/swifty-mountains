@@ -6,6 +6,7 @@ class ChatsTableViewCell: UITableViewCell {
     
     var profileImageView: UIImageView = {
         let image = UIImageView()
+        image.clipsToBounds = true
         return image
     }()
     
@@ -25,11 +26,9 @@ class ChatsTableViewCell: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
-        addSubview(profileImageView)
-        
-        addSubview(imageLabel)
-        
-        addSubview(informationLabel)
+        [profileImageView, imageLabel, informationLabel].forEach {
+            addSubview($0)
+        }
         
         setUpProfileImageView()
         
@@ -67,7 +66,7 @@ class ChatsTableViewCell: UITableViewCell {
         //informationLabel.topAnchor.constraint(equalTo: imageLabel.topAnchor, constant: 40).isActive = true
         //informationLabel.leadingAnchor.constraint(equalTo: imageLabel.leadingAnchor).isActive = true
         
-        // this method is painful works the same way though
+        // this method is bit long, but works the same way though
         NSLayoutConstraint.activate([
             NSLayoutConstraint.init(item: informationLabel, attribute: .top, relatedBy: .equal, toItem: imageLabel, attribute: .top, multiplier: 1.0, constant: 40.00),
             NSLayoutConstraint.init(item: informationLabel, attribute: .leading, relatedBy: .equal, toItem: imageLabel, attribute: .leading, multiplier: 1.0, constant: 1.0)
